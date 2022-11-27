@@ -74,6 +74,34 @@
     width: 270px;
     margin-top: 225px;
   }
+
+  .menu_icon {
+    width: 22px;
+    position: relative;
+    cursor: pointer;
+    top: 32px;
+    left: 100%;
+  }
+
+  .menu_icon span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 22px;
+    background-color: #ffffff;
+  }
+
+  .menu_icon span:nth-child(1) {
+    top: 0px;
+  }
+
+  .menu_icon span:nth-child(2) {
+    top: 6px;
+  }
+
+  .menu_icon span:nth-child(3) {
+    top: 12px;
+  }
   
   .menu_list {
     display: none;
@@ -196,27 +224,15 @@
     text-decoration: none;
     text-transform: uppercase;
 
+    border-bottom: 1px solid transparent;
     color: #b59f5b;
-  }
-  
-  .post_tag_link:hover::after {
-    content: '';
-
-    position: relative;
-    left: 0;
-
-    display: block;
-    width: 100%;
-    height: 1px;
-
-    background-color: #6a5d34;
   }
 
   .post_title {
     margin-top: 13px;
   }
 
-  .post_title_link{
+  .post_title_link {
     font-size: 16px;
     font-weight: 800;
     line-height: 1.25;
@@ -270,6 +286,8 @@
     font-size: 14px;
     font-weight: 800;
     text-transform: uppercase;
+
+    border-bottom: 1px solid transparent;
     color: #b59f5b;
   }
 
@@ -392,7 +410,7 @@
   
     color: #707171;
     background-color: #f4f7f6;
-    border: 0;
+    border: 1px solid transparent;
     cursor: pointer;
   }
 
@@ -430,18 +448,6 @@
     cursor: pointer;
   }
 
-  .field:active, .field:focus, .btn_search:active, .btn_search:focus, .btn_submit:focus, .btn_submit:active, .mail_field:focus, .mail_field:active {
-    outline: none;
-  }
-  
-   .field:focus, .mail_field:focus {
-    border-bottom: 1px solid #ebe7d7;
-  } 
-
-  .btn_submit:focus, .btn_submit:active {
-    border: 1px solid #b9b29b;
-  }
-
   .tag_list {
     display: flex;
     flex-wrap: wrap;
@@ -451,7 +457,7 @@
   .tag_item_link {
     display: block;
     padding: 4px 13px;
-    margin-right: 6px;
+    margin-right: 4px;
     margin-bottom: 6px;
 
     font-size: 12px;
@@ -461,10 +467,6 @@
     
     color: #0f0d0e;
     border: 3px solid #eeeeee;
-  }
-
-  .tag_item_link-select {
-    margin-right: 0;
   }
 
   .topic_item {
@@ -500,21 +502,23 @@
   }
 
   .products_card {
-    margin: 0 22px 49px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    margin-bottom: 27px;
   }
 
   .card_img {
-    width: 100%;
+    width: 284px;
     max-height: 100%;
   }
 
   .card_content {
     position: relative;
     z-index: 2;
-    right: 8%;
 
     width: 330px;
     padding: 45px 18px 26px;
@@ -539,10 +543,6 @@
 
   .products_link {
     color: #b6a15e;
-  }
-
-  .products_link-select {
-    text-decoration: underline;
   }
 
   .card_buy {
@@ -585,11 +585,12 @@
   /* FOOTER  */
 
   .footer {
+    width: 100%;
+    padding: 0 15px;
     margin-bottom: 50px;
   }
 
   .footer_container {
-    width: 100%;
     padding: 30px 0;
     background-color:#f4f7f6;
   }
@@ -633,26 +634,41 @@
   } 
 
   /* HOVER */
+
+  .menu_link:hover {
+    border-bottom: 1px solid #d6d6d4;
+  }
   
   .topic_item_link:hover, .article_title_link:hover, .post_title_link:hover, .article_tag_link:hover, .products_link:hover {
-    text-shadow: #b59f5b 0 0 1px;
+    color: #b59f5b;
   }
 
-  .tag_item_link:hover, .card_text:hover{
-    text-shadow: #000 0 0 1px;
+  .tag_item_link:hover {
+    border: 3px solid #b59f5b;
   }
 
-  .post_tag_link:hover::after, .article_tag_link:hover::after {
-    content: "";
+  .post_tag_link:hover, .article_tag_link:hover {
+    border-bottom: 1px solid #6a5d34;
+  }
 
-    position: relative;
-    left: 0;
+  .products_link:hover {
+    text-decoration: underline;
+  }
 
-    display: block;
-    width: 100%;
-    height: 1px; 
+  .field:active, .field:focus, .btn_search:active, .btn_search:focus, .btn_submit:focus, .btn_submit:active, .mail_field:focus, .mail_field:active {
+    outline: none;
+  }
+  
+  .mail_field:hover, .field:hover {
+    border: 1px solid #b59f5b;
+  } 
 
-    background-color: #6a5d34;
+  .btn_submit:active, .btn_submit:hover {
+    border: 1px solid #b59f5b;
+  }
+
+  .btn_search:hover, .btn_submit:hover {
+    background-color: #323232;
   }
 
   /* TABLET */
@@ -673,10 +689,8 @@
       display: block;
     }
 
-    .header_menu {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .menu_icon {
+      top: 58px;
     }
 
     .logo {
@@ -817,12 +831,12 @@
     }
 
     .products_card {
-      width: 43%;
-      margin-right: 47px;
+      width: 50%;
     }
 
     .products_card-second {
       margin-right: 0;
+      margin-left: 0;
     }
 
     .products_card-third {
@@ -835,13 +849,13 @@
     }
 
     .card_content {
-      right: 7%;
       flex-grow: 1;
     }
 
     /* FOOTER */
     
     .footer {
+      padding: 0 35px;
       margin-bottom: 40px;
     }
 
@@ -880,6 +894,10 @@
       margin-top: 28px;
     }
 
+    .menu_icon {
+      display: none;
+    }
+
     .menu {
       margin-top: 28px;
     }
@@ -888,6 +906,8 @@
       display: inline;
 
       list-style-type: none;
+
+      border-bottom: 1px solid transparent;
       color: #ffffff;
     }
     
@@ -907,17 +927,6 @@
       text-transform: uppercase;
       
       color: #ffffff;
-    }
-    
-    .menu_link:hover::after {
-      content: "";
-      display: block;
-      position: relative;
-      left: 0;
-      width: 100%;
-      height: 1px;
-    
-      background-color: #d6d6d4;
     }
     
     .banner {
@@ -1042,20 +1051,16 @@
   }
 
   .products_card {
-    width: 30%;
-    margin-right: 67px;
+    width: 350px;
+    margin-bottom: 0;
+    margin-right: 66px;
   }
 
   .products_card-third {
     margin-right: 0;
   }
 
-  .products_card-first, .products_card-second, .products_card-third {
-    margin-bottom: 0;
-  }
-
   .card_content {
-    right: 4.4%;
     flex-grow: 1;
   }
 
@@ -1065,24 +1070,29 @@
   }
 
   .footer {
+    max-width: 1200px;
+    margin: 0 auto;
     margin-bottom: 44px;
   }
 
   .copyright {
     margin-top: 76px;
   }
-
   }
 
   /* POPUP */
 
-  .overflow_popup::before {
+  .overflow_popup {
     display: none;
+  }
+
+  .overflow_popup::before {
     content: '';
   
     position: fixed;
     left: 0;
     top: 0;
+    z-index: 9999;
 
     width: 100%;
     height: 100%;
@@ -1091,13 +1101,13 @@
   }
 
   .popup {
-    display: none;
     position: fixed;
-    top: 44%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 9999;
 
-    width: 90%;
+    width: 330px;
     height: 546px;
   }
 
@@ -1107,12 +1117,29 @@
 
   .popup_close {
     position: absolute;
-    left: 93%;
-
-    font-size: 47px;
-
+	  top: 22px;
+	  right: 0;
+	  width: 24px;
+	  height: 24px;
     cursor: pointer;
-    color: #ffffff;
+  }
+
+  .popup_close::before, .popup_close::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: #ffffff;
+  }
+
+  .popup_close::before {
+	  transform: rotate(45deg);
+  }
+
+  .popup_close::after {
+	  transform: rotate(-45deg);
   }
 
   .popup_content {
@@ -1125,9 +1152,13 @@
     background-color: #ffffff;
   }
 
+  .popup_questions {
+    margin-top: -10px;
+  }
+
   .question_title {
     display: block;
-    margin: 33px 0 12px;
+    margin: 27px 0 12px;
 
     font-size: 13px;
     font-weight: 400;
@@ -1151,6 +1182,7 @@
     font-weight: 400;
 
     color: #a2a4a3;
+    border: 1px solid transparent;
   }
 
   .input_group-text::before {
@@ -1183,13 +1215,13 @@
 
     font-family: inherit;
 
-    border: none;
+    border: 1px solid transparent;
     background-color: #f4f7f6;
   }
 
   .form_field:focus, .textarea_answer:focus {
-    outline: 0;
-    outline-offset: 0;
+    outline: none;
+    border: 1px solid #b59f5b;
   }
 
   /* TABLET */
@@ -1197,7 +1229,7 @@
   @media (min-width: 641px) and (max-width: 1200px) {
   
     .popup {
-      width: 50%;
+      width: 390px;
       height: 600px;
     }
   }
@@ -1207,12 +1239,7 @@
    @media (min-width: 1200px) {
    
     .popup {
-      transform: translate(-50%, -50%);
+      width: 390px;
       height: 600px;
-      width: 30%;
-    }
-
-    .popup_close {
-      left: 89%;
     }
   }
