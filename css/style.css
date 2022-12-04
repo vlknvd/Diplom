@@ -1080,7 +1080,7 @@
   /* POPUP */
 
   .overflow_popup {
-    display: none;
+    
     position: fixed;
     left: 0;
     top: 0;
