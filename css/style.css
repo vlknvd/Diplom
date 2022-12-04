@@ -67,19 +67,18 @@
 
     max-width: 360px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 225px 15px 0;
   }
 
   .logo {
     width: 270px;
-    margin-top: 225px;
   }
 
   .menu_icon {
     width: 22px;
     position: relative;
     cursor: pointer;
-    top: 32px;
+    top: -260px;
     left: 100%;
   }
 
@@ -281,6 +280,10 @@
     display: inline-block;
   }
 
+  .article_tag_item-selected {
+      margin-left: 20px;
+  }
+
   .article_tag_link {
     display: inline-block;
     font-size: 14px;
@@ -289,10 +292,6 @@
 
     border-bottom: 1px solid transparent;
     color: #b59f5b;
-  }
-
-  .article_tag_link-select {
-    margin-left: 20px;
   }
 
   .article_title {
@@ -513,14 +512,13 @@
 
   .card_img {
     width: 284px;
-    max-height: 100%;
+    height: 100%;
   }
 
   .card_content {
     position: relative;
     z-index: 2;
 
-    width: 330px;
     padding: 45px 18px 26px;
     margin-top: -36px;
 
@@ -685,18 +683,17 @@
 
     .header_wrapper {
       max-width: 700px;
-      padding: 0 35px;
+      padding: 46px 35px;
 
       display: block;
     }
 
     .menu_icon {
-      top: 58px;
+      top: -30px;
     }
 
     .logo {
       width: 160px;
-      margin-top: 46px;
     }
 
     .banner {
@@ -832,7 +829,9 @@
     }
 
     .products_card {
-      width: 50%;
+      width: calc(50% - 20px);
+      margin-right: 20px;
+      flex-grow: 1;
     }
 
     .products_card-second {
@@ -842,6 +841,8 @@
 
     .products_card-third {
       margin-bottom: 0;
+      margin-right: 0;
+      flex-grow: 0;
     }
 
     .card_img {
@@ -873,6 +874,7 @@
 
     .header {
       padding-bottom: 10%;
+
       background-image: url("../img/banner-bg.jpg");
     }
 
@@ -880,7 +882,7 @@
       display: block;
 
       max-width: 1200px;
-      padding: 0 15px;
+      padding: 28px 15px;
       margin: 0 auto;
     }
 
@@ -892,15 +894,10 @@
 
     .logo {
       width: 180px;
-      margin-top: 28px;
     }
 
     .menu_icon {
       display: none;
-    }
-
-    .menu {
-      margin-top: 28px;
     }
 
     .menu_list {
@@ -908,7 +905,6 @@
 
       list-style-type: none;
 
-      border-bottom: 1px solid transparent;
       color: #ffffff;
     }
     
@@ -1085,11 +1081,6 @@
 
   .overflow_popup {
     display: none;
-  }
-
-  .overflow_popup::before {
-    content: '';
-  
     position: fixed;
     left: 0;
     top: 0;
@@ -1102,59 +1093,40 @@
   }
 
   .popup {
-    position: fixed;
-    top: 50%;
+    position: absolute;
     left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
-    z-index: 9999;
+    z-index: 999;
 
     width: 330px;
-    height: 546px;
+    height: 100%;
+  }
+
+  .popup_close {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    background-color: transparent;
+    border: none;
+  }
+
+  .popup_close-x {
+    width: 26px;
+    height: 26px;
   }
 
   .popup_title {
     margin-top: 0;
   }
 
-  .popup_close {
-    position: absolute;
-	  top: 22px;
-	  right: 0;
-	  width: 24px;
-	  height: 24px;
-    cursor: pointer;
-  }
-
-  .popup_close::before, .popup_close::after {
-    content: '';
-    position: absolute;
-    top: 10px;
-    display: block;
-    width: 24px;
-    height: 3px;
-    background: #ffffff;
-  }
-
-  .popup_close::before {
-	  transform: rotate(45deg);
-  }
-
-  .popup_close::after {
-	  transform: rotate(-45deg);
-  }
-
   .popup_content {
     position: absolute;
 
-    height: 545px;
     margin: 50px auto;
     padding: 30px 25px;
 
     background-color: #ffffff;
-  }
-
-  .popup_questions {
-    margin-top: -10px;
   }
 
   .question_title {
@@ -1195,7 +1167,7 @@
     width: 26px;
     height: 26px;
 
-    background-image: url("../svg/form-empty-circle.svg");
+    background-image: url("/svg/form-empty-circle.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 26px;
@@ -1206,7 +1178,7 @@
   }
 
   .input_group-control:checked~.input_group-text::before {
-    background-image: url("../svg/form-circle.svg")
+    background-image: url("/svg/form-circle.svg")
   }
 
   .textarea_answer {
@@ -1231,7 +1203,7 @@
   
     .popup {
       width: 390px;
-      height: 600px;
+      top: 55%;
     }
   }
 
@@ -1241,6 +1213,6 @@
    
     .popup {
       width: 390px;
-      height: 600px;
+      top: 65%;
     }
   }
